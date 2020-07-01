@@ -1,0 +1,30 @@
+﻿.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.8fr 1fr;
+    grid-template-areas: "header header header header" "left right right right" "left right right right";
+}
+
+.header {
+    grid-area: header;
+    height: 70px;
+    background-color: coral;
+}
+
+.left {
+    grid-area: left;
+    background-color: aqua;
+}
+
+.right {
+    grid-area: right;
+    background-color: gray;
+}
+
+.center {
+    top: 20%;
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    
+  }

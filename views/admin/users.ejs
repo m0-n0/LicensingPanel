@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet " /> -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/users.css" rel="stylesheet">
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/users.js"></script>
+
+    <title>Log in</title> 
+    
+    <script>
+        loadUsersData();
+        document.getElementById().style.borderColor = 'blue';
+    </script>
+</head>
+<body>
+    
+    <table class="table table-bordered table-striped table-responsive-md btn-table">
+        <thead class="thead-dark">
+            <tr>
+                <th style="left:0;width:2em;">ID</th scope="col">
+                <th>Name</th>
+                <th>IP</th scope="col">
+                <th>Active</th scope="col">
+                <th>Changed IP</th scope="col">
+                <!-- <th>Образование</th>
+                <th>Стаж работы</th> -->
+            </tr>
+           
+        </thead>
+        <tr> 
+            <th  style=" text-align: center;"  scope="row"><button type="button" style="width: 105px;" class="btn btn-lg btn-success" id="add" >Add</button></th>
+            <td><input class="form-control input-lg" type="text" id="hwid"  placeholder="HWID" /></td>
+            <td><input class="form-control input-lg" type="text" id="ip"  placeholder="IP" /> </td>
+            <td>
+                <div class="checkbox checbox-switch switch-success">
+                    <label style="vertical-align: middle; ">
+                        <input type="checkbox" id="Active" placeholder="Active" class="checkbox checbox-switch switch-success"  />
+                        <span></span>
+                    </label>
+                </div>
+            </td>
+            <td>
+                <div class="checkbox checbox-switch switch-success">
+                    <label style="vertical-align: middle; ">
+                        <input type="checkbox" id="ChangedIp" placeholder="ChangedIp" class="checkbox checbox-switch switch-success"  />
+                        <span></span>
+                    </label>
+                </div>
+            </td>
+            <!-- <td><input class="form-check-input" type="checkbox" id="CBT"  placeholder="CBT" /> </td>
+            <td><input class="form-control input-lg" type="checkbox" id="Akamai"  placeholder="Akamai" /> </td> -->
+        </tr>
+		<tbody id="content">
+
+        </tbody>
+       
+        
+	</table >
+    <!-- <div class="center" style="top: 20%; display: flex;  margin-top: 200px; justify-content: center;">
+        <div class="panel well" style="width: 350px; padding: 25px; text-align: center; align-content: center; ">
+            <h2 style="margin-bottom: 35px">Log in</h2>
+                <form name="login">
+                    <div class="form-group">
+                       <label>Username</label> <input class="form-control input-lg" type="text" id="login" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label> <input class="form-control input-lg" type="text" id="password" />
+                    </div>
+                    <div class="form-group">
+                        <input type="button" value="Log in" class="btn btn-lg btn-success" id="btn" />
+                    </div>
+                </form>
+            </div> 
+    </div> -->
+   
+	
+</body>
+</html>

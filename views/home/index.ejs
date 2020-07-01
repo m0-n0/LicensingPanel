@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Angular 2Do</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="styleNew.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="grid-container">
+    <div class="header"></div>
+    <div class="left">
+        <% for(var i=0; i <data.length;i++) {%>
+        <div class="todo-item">
+            <button class="icon">
+                <i class="material-icons">check_box_outline_blank</i>
+            </button>
+            <span class="title"><%=data[i]%></span>
+
+            <div class="num">
+                <h5>5</h5>
+            </div>
+        </div>
+        <%} %>
+    </div>
+    <div class="right"></div>
+</div>
+
+<!--<section class="todo-list">
+    <% for(var i=0; i
+    <data.length;i++) {%>
+    <div class="todo-item">
+        <button class="checkbox icon">
+            <i class="material-icons">check_box_outline_blank</i>
+        </button>
+        <span class="title"><%=data[i]%></span>
+
+        <div class="actions">
+            <button class="delete icon">
+                <i class="material-icons">delete</i>
+            </button>
+        </div>
+    </div>
+    <%} %>
+</section>-->
+</body>
+</html>
+

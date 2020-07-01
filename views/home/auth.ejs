@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet " />
+    <script src="lib/jquery/jquery.min.js"></script>
+    <style>
+    @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+    .input-group-addon.beautiful input[type="checkbox"],
+    .input-group-addon.beautiful input[type="radio"] {
+        display: none;
+    }
+</style>
+    <title>Log in</title> 
+    <script>
+        $(function () {
+            $('.input-group-addon.beautiful').each(function () {
+                
+                var $widget = $(this),
+                    $input = $widget.find('input'),
+                    type = $input.attr('type');
+                    settings = {
+                        checkbox: {
+                            on: { icon: 'fa fa-check-circle-o' },
+                            off: { icon: 'fa fa-circle-o' }
+                        },
+                        radio: {
+                            on: { icon: 'fa fa-dot-circle-o' },
+                            off: { icon: 'fa fa-circle-o' }
+                        }
+                    };
+                $widget.prepend('<span class="' + settings[type].off.icon + '"></span>');
+                    
+                $widget.on('click', function () {
+                    $input.prop('checked', !$input.is(':checked'));
+                    myFunction();
+                    updateDisplay();
+                });
+                    
+                function updateDisplay() {
+                    var isChecked = $input.is(':checked') ? 'on' : 'off';
+                    $widget.find('.fa').attr('class', settings[type][isChecked].icon);
+                }
+                
+                updateDisplay();
+            });
+        });
+        function myFunction() {
+                var x = document.getElementById("password");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        window.onload = function() { 
+            var btn = document.getElementById('btn'); 
+            var error = document.getElementById('error'); 
+            var inputs = document.getElementsByTagName('input'); 
+            error.hidden = true;
+            btn.addEventListener('click', function() {
+                var userData = {
+                    username: inputs[0].value, 
+                    password: inputs[1].value
+                }; 
+
+                $.ajax({
+                    url: '/login',
+                    accepts: 'application/json',
+                    data:userData,
+                    method: 'POST',
+                    success: function (data) {
+                        if(data.error){
+                            error.hidden = false;
+                            error.innerText = data.error;
+                        } 
+                        else location = data.location;
+                    }
+                });
+            }) 
+        }
+    </script>
+</head>
+<body>
+ 
+    <div class="center" style="top: 20%; display: flex;  margin-top: 200px; justify-content: center;">
+        <div class="panel well" style="width: 350px; padding: 25px; text-align: center; align-content: center; ">
+            <!-- <h2 style="margin-bottom: 35px">Log in</h2> -->
+            <h4 style="margin-bottom: 35px; color: red;" id='error'></h4>
+                <form name="login">
+                    <div class="form-group">
+                        <input class="form-control input-lg" placeholder="Username" type="text" id="login" />
+                    </div>
+                    <div class="form-group input-group">
+                       
+                        <input class="form-control input-lg" placeholder="Password" type="password" id="password" />
+                        <span class="input-group-addon beautiful">
+                            <input type="checkbox">
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" value="Log in" class="btn btn-lg btn-success" id="btn" />
+                    </div>
+                </form>
+            </div> 
+    </div>
+   
+	
+</body>
+</html>
